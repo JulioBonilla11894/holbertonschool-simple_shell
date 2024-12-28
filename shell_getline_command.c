@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
-* _command_line - GEts inputs
+* getline_command - GEts inputs
 * Return: The input.
 */
 
-char *command_line(void)
+char *getline_command(void)
 {
         char *lineptr = NULL;
         size_t charter_user = 0;
