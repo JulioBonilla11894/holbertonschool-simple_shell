@@ -29,7 +29,7 @@ int main(int ac, char **av, char **env)
 			else
 			{
 				is_path = _values_path(&commands[0], env);/** tokenizes PATH*/
-                                status = _fork_fun(commands, av, env, line, pathValue, is_path);
+				status = _fork_fun(commands, av, env, line, pathValue, is_path);
 					if (status == 200)
 					{
 						free(line);

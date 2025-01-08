@@ -11,7 +11,7 @@ char *getline_command(void)
 	size_t charter_user = 0;
 
 	if (isatty(STDIN_FILENO))
-		writes(STDOUT_FILENO, "$ ", 2);
+		write(STDOUT_FILENO, "$ ", 2);
 
 	if (getline(&lineptr, &charter_user, stdin) == -1)
 	{
