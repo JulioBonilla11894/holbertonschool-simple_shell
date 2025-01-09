@@ -21,11 +21,20 @@ char **tokenize(char *line);
 void _getenv(char **env);
 int _values_path(char **command, char **env);
 int _fork_fun(
+<<<<<<< HEAD
 	char **commands,
 	char **av,
 	char **env,
 	char *line,
 	int pathValue,
 	int is_path);
+=======
+		char **commands,
+		char **av,
+		char **env,
+		char *line,
+		int pathValue,
+		int is_path);
+>>>>>>> 2f8c5355bf860d848a50afe396c3f5f0f829d82d
 
 #endif
