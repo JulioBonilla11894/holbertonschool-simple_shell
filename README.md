@@ -1,10 +1,10 @@
-Simple Shell
+# Simple Shell
 
 This is our simple shell project. This mimics basic Unix shell functionalities 
 such as executing commands and supporting built-in commands.
 
 
-Table of Contents:
+# Table of Contents:
 
 • Features
 
@@ -15,7 +15,7 @@ Table of Contents:
 • Contributing
 
 
-Features:
+# Features:
 
 • Command execution: The shell can execute commands entered by the user.
 
@@ -25,14 +25,14 @@ Features:
 run external programs.
 
 
-Getting Started:
+# Getting Started:
 
 To compile and use this project we will need:
 
 • gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 
-File Structure:
+# File Structure:
 
 main.c: Main program file containing the shell logic.
 
@@ -41,7 +41,7 @@ Files: Files to compile the shell.
 README.md: Documentation for the shell project.
 
 
-Contributors:
+# Contributors:
 
 Authors that contributed to this project:
 
@@ -52,6 +52,6 @@ Authors that contributed to this project:
 If you'd like to contribute, please fork this repository, make your changes,
 and submit a pull request.
 
-Hyperlinks:
+# Hyperlinks:
 
 [github.com/JulioBonilla11894/holbertonschool-simple_shell](url)
