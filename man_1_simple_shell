@@ -3,7 +3,7 @@
 simple_shell \- A simple UNIX command interpreter created by Yoruan and Julio.
 
 .SH SYNOPSIS
-.B ./hsh
+ ./hsh
 
 .SH DESCRIPTION
 The **simple_shell** is a simple UNIX command interpreter that mimics basic shell behavior. It runs in an interactive mode and executes basic commands by forking a child process and executing the command.
@@ -21,14 +21,14 @@ This shell supports only the following features:
 .SH OPTIONS
 No command-line options are available for **simple_shell**. The shell is invoked by running:
 
-.B ./hsh
+./hsh
 
 .SH EXAMPLES
 Example usage:
 
 $ ./hsh
 yoruan_shell: ls
-AUTHORS  builtin.c  hsh  main.c  path.c  README.md  shell.c  shell.h  utils.c man_1_simple_shell
+AUTHORS  builtin.c  hsh  main.c  path.c  README.md  shell.h  utils.c man_1_simple_shell
 
 $ ./hsh
 yoruan_shell: env
