@@ -9,7 +9,7 @@
 char **tokenize(char *lineptr)
 {
 	char **user_command = NULL;
-	char * token = NULL;
+	char *token = NULL;
 	size_t i = 0;
 	int size = 0;
 
