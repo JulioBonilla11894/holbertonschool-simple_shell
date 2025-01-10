@@ -13,7 +13,7 @@
 #include <signal.h>
 #include <ctype.h>
 
-int process_builtins(char commands, char env);
+int process_builtins(char **commands, char **env);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);
 char *_getline_command(void);

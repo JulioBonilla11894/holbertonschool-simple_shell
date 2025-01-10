@@ -12,11 +12,15 @@ int main(int ac, char **av, char **env)
 	char *line = NULL;
 	char **commands = NULL;
 	int pathValue = 0, status = 0, is_path = 0;
+	int interactive_mode = isatty(STDIN_FILENO);
 
 	(void)ac;
 	while (1)
 	{
-		printf("yoruan_shell: ");
+		if (interactive_mode)
+		{
+			printf("yoruan_shell: ");
+		}
 		line = _getline_command();
 		if (!line)
 		return (0);
@@ -42,6 +46,13 @@ int main(int ac, char **av, char **env)
 			status = _fork_fun(commands, av, env, line, pathValue, is_path);
 			free(commands);
 			free(line);
+		}
+		if (!interactive_mode)
+		{
+			if (feof(stdin))
+			{
+				break;
+			}
 		}
 	}
 
