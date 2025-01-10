@@ -52,6 +52,6 @@ Authors that contributed to this project:
 If you'd like to contribute, please fork this repository, make your changes,
 and submit a pull request.
 
-# Hyperlinks:
+# Hyperlink:
 
-[github.com/JulioBonilla11894/holbertonschool-simple_shell](url)
+[github.com/JulioBonilla11894/holbertonschool-simple_shell]
