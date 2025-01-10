@@ -1,0 +1,80 @@
+.TH SIMPLE_SHELL 1 "January 2025" "1.0" "Yoruan and Julio Simple Shell Manual"
+.SH NAME
+simple_shell \- A simple UNIX command interpreter created by Yoruan and Julio.
+
+.SH SYNOPSIS
+ ./hsh
+
+.SH DESCRIPTION
+The **simple_shell** is a simple UNIX command interpreter that mimics basic shell behavior. It runs in an interactive mode and executes basic commands by forking a child process and executing the command.
+
+When you run the program, it will display a prompt and wait for you to type a command. The command is then executed, and the shell displays the prompt again after the command finishes. If an executable cannot be found, the program prints an error message and waits for the next command.
+
+This shell supports only the following features:
+- Displaying a prompt.
+- Waiting for user input.
+- Executing simple commands.
+- Displaying an error message if a command is not found.
+- Handling "end of file" condition (Ctrl+D).
+- The program exits with status 0 when the user types **exit**.
+
+.SH OPTIONS
+No command-line options are available for **simple_shell**. The shell is invoked by running:
+
+./hsh
+
+.SH EXAMPLES
+Example usage:
+
+$ ./hsh
+yoruan_shell: ls
+AUTHORS  builtin.c  hsh  main.c  path.c  README.md  shell.h  utils.c man_1_simple_shell
+
+$ ./hsh
+yoruan_shell: env
+USER=julien
+LANGUAGE=en_US
+SESSION=ubuntu
+COMPIZ_CONFIG_PROFILE=ubuntu
+SHLVL=1
+HOME=/home/julien
+C_IS=Fun_:)
+DESKTOP_SESSION=ubuntu
+LOGNAME=julien
+TERM=xterm-256color
+PATH=/home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+DISPLAY=:0
+
+$ ./hsh
+yoruan_shell: exit
+$
+
+.SH EXIT STATUS
+The shell returns the following exit status:
+.TP
+0
+Command executed successfully.
+.TP
+1
+Command or file not found.
+.TP
+127
+Command failed to execute (e.g., due to permission issues).
+
+.SH ENVIRONMENT VARIABLES
+The shell interacts with environment variables and supports printing them via the **env** command. Some common environment variables include:
+
+.TP
+.B PATH
+The system path variable containing directories to search for executables.
+
+.TP
+.B HOME
+The user's home directory.
+
+.TP
+.B USER
+The current user's name.
+
+.SH AUTHOR
+**simple_shell** was written by **Yoruan** and **Julio** for educational purposes at **Holberton School**.
