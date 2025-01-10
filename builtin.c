@@ -4,7 +4,6 @@
  * _getenv - Prints the environment variables
  * @env: Environment variables
  */
-
 void _getenv(char **env)
 {
 	int i;

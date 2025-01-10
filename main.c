@@ -7,7 +7,6 @@
  * @env: Environment variables
  * Return: Shell exit status
  */
-
 int main(int ac, char **av, char **env)
 {
 	char *line = NULL;
@@ -17,6 +16,7 @@ int main(int ac, char **av, char **env)
 	(void)ac;
 	while (1)
 	{
+		printf("yoruan_shell: ");
 		line = _getline_command();
 		if (!line)
 		return (0);
@@ -37,18 +37,15 @@ int main(int ac, char **av, char **env)
 			free(line);
 			continue;
 		}
-
 		if (is_path == 0)
-		status = _fork_fun(commands, av, env, line, pathValue, is_path);
-
-		if (is_path == 0)
-		free(commands[0]);
-
-		free(commands);
-		free(line);
+		{
+			status = _fork_fun(commands, av, env, line, pathValue, is_path);
+			free(commands);
+			free(line);
+		}
 	}
 
-	return (status);
+	return (0);
 }
 
 /**
@@ -61,14 +58,11 @@ int process_builtins(char **commands, char **env)
 {
 	if (!_strcmp(commands[0], "exit"))
 	{
-		free(commands[0]);
-		free(commands);
-		return (1);
+		exit(0);
 	}
 	else if (!_strcmp(commands[0], "env"))
 	{
 		_getenv(env);
-		free(commands);
 		return (1);
 	}
 	return (0);
