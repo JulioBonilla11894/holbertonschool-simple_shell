@@ -27,7 +27,6 @@ int main(int ac, char **av, char **env)
         if (!line)
 	{
             	free(line);
-		break;
 	}
 
 	commands = malloc(100 * sizeof(char *));
