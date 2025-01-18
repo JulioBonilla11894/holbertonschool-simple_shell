@@ -24,9 +24,9 @@ int main(int ac, char **av, char **env)
 	}
 
         line = _getline_command();
-        if (!line)
+        if (line == NULL)
 	{
-            	free(line);
+		break;
 	}
 
 	commands = malloc(100 * sizeof(char *));
