@@ -16,16 +16,33 @@ int main(int ac, char **av, char **env)
             printf("simple_shell: ");
         }
 
+	line = malloc(1024 * sizeof(char));
+	if (!line)
+	{
+		perror("malloc failed for line");
+		return (1);
+	}
+
         line = _getline_command();
         if (line == NULL)
 	{
+		free(line);
 		break;
+	}
+
+	commands = malloc(100 * sizeof(char *));
+	if (!commands)
+	{
+		perror("malloc failed for commands");
+		free(line);
+		return (1);
 	}
 
 	commands = tokenize(line);
 	if (!commands)
 	{
             free(line);
+	    free(commands);
             continue;
         }
 
