@@ -13,7 +13,7 @@ int main(int ac, char **av, char **env)
     {
         if (interactive_mode)
         {
-            printf("simple_shell: ");
+            	printf("simple_shell: ");
         }
 
 	line = malloc(1024 * sizeof(char));
@@ -24,9 +24,9 @@ int main(int ac, char **av, char **env)
 	}
 
         line = _getline_command();
-        if (line == NULL)
+        if (!line)
 	{
-		free(line);
+            	free(line);
 		break;
 	}
 
@@ -41,21 +41,21 @@ int main(int ac, char **av, char **env)
 	commands = tokenize(line);
 	if (!commands)
 	{
-            free(line);
-	    free(commands);
-            continue;
+            	free(line);
+	    	free(commands);
+            	continue;
         }
 
         pathValue++;
         if (_values_path(&commands[0], env) || access(commands[0], X_OK) == 0)
         {
-            status = _fork_fun(commands, av, env, line, pathValue, 1);
+            	status = _fork_fun(commands, av, env, line, pathValue, 1);
         }
         else
         {
-            status = process_builtins(commands, env);
-            if (status == 0)
-                fprintf(stderr, "%s: Command not found\n", commands[0]);
+            	status = process_builtins(commands, env);
+            	if (status == 0)
+                	fprintf(stderr, "%s: Command not found\n", commands[0]);
         }
 
         free(commands);
