@@ -1,4 +1,5 @@
 #include "shell.h"
+#include "tokenizer.h"
 
 char *_getline_command(void)
 {
@@ -34,3 +35,15 @@ char **tokenize(char *line)
     tokens[i] = NULL;
     return tokens;
 }
+
+void free_tokens(char **tokens) 
+{
+    int i = 0;
+    while (tokens[i] != NULL) 
+    {
+        free(tokens[i]);
+        i++;
+    }
+    free(tokens);
+}
+
