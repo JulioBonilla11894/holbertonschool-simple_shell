@@ -8,12 +8,11 @@ int _values_path(char **command, char **env)
 {
     char *path = NULL, *path_dup = NULL, *path_token = NULL;
     struct stat st;
-    int i; /* Declare loop variable outside the for loop */
+    int i;
 
-    /* Find the PATH environment variable */
     for (i = 0; env[i]; i++)
     {
-        if (strncmp(env[i], "PATH=", 5) == 0) /* Use standard strncmp */
+        if (strncmp(env[i], "PATH=", 5) == 0)
         {
             path = env[i] + 5; /* Skip "PATH=" */
             break;
@@ -32,6 +31,8 @@ int _values_path(char **command, char **env)
     while (path_token)
     {
         char *full_path = malloc(strlen(path_token) + strlen(*command) + 2);
+	/* Allocate space for full path */
+
         if (!full_path)
         {
             free(path_dup);
@@ -48,7 +49,7 @@ int _values_path(char **command, char **env)
             return (1); /* Command resolved */
         }
 
-        free(full_path);
+        free(full_path); /* Free full_path if stat fails */
         path_token = strtok(NULL, ":");
     }
 
