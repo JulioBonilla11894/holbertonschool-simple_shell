@@ -1,5 +1,6 @@
 #include "shell.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int process_builtins(char **commands, char **env)
 {
@@ -18,18 +19,10 @@ int process_builtins(char **commands, char **env)
 void _getenv(char **env)
 {
     int i;
-    char *env_var = (char *)malloc(256 * sizeof(char));
-    if (env_var == NULL)
-    {
-	perror("malloc failed");
-    	exit(1);
-    }
     for (i = 0; env[i]; i++)
     {
-	snprintf(env_var, 256, "%s", env[i]);
         printf("%s\n", env[i]);
     }
-    free(env_var);
 }
 
 int _strcmp(char *s1, char *s2)
