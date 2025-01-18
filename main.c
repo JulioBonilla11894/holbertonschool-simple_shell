@@ -17,12 +17,14 @@ int main(int ac, char **av, char **env)
         }
 
         line = _getline_command();
-        if (!line)
-            return (0);
+        if (line == NULL)
+	{
+		break;
+	}
 
-        commands = tokenize(line);
-        if (!commands)
-        {
+	commands = tokenize(line);
+	if (!commands)
+	{
             free(line);
             continue;
         }
@@ -41,9 +43,6 @@ int main(int ac, char **av, char **env)
 
         free(commands);
         free(line);
-
-        if (!interactive_mode && feof(stdin))
-            break;
     }
 
     return (0);
