@@ -36,14 +36,8 @@ char **tokenize(char *line)
     return tokens;
 }
 
-void free_tokens(char **tokens) 
+for (int i = 0; commands[i] != NULL; i++)
 {
-    int i = 0;
-    while (tokens[i] != NULL) 
-    {
-        free(tokens[i]);
-        i++;
-    }
-    free(tokens);
+	free(commands[i]);
 }
-
+free(commands);
